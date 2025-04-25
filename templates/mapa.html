@@ -1,0 +1,62 @@
+{% extends "padrao.html" %}
+
+{% block conteudo %}
+<body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta tag para responsividade -->
+  <title>Mapa - SAC de Irecê</title>
+
+  <!-- Link do Leaflet CSS (estilo do mapa) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+  <!-- Estilo para o mapa aparecer corretamente -->
+  <style>
+    /* Garantir que o corpo da página ocupe 100% da tela */
+    html, body {
+      height: 100%; /* Ocupa toda a altura da tela */
+      margin: 0; /* Remove margens padrão do navegador */
+    }
+
+    /* O container do mapa vai ocupar 100% da largura e altura */
+    #map {
+      height: 100vh;  /* 100% da altura da tela */
+      width: 100%;    /* 100% da largura da tela */
+    }
+  </style>
+</head>
+
+
+  <h2 class="fw-bold">Mapa do SAC de Irecê</h2>
+
+  <!-- Div onde o Leaflet vai desenhar o mapa -->
+  <div id="map"></div>
+
+  <!-- Script do Leaflet JS (faz o mapa funcionar) -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <!-- Script para carregar o mapa -->
+  <script>
+    // Coordenadas do SAC (centro inicial do mapa)
+    const sacCoords = [-11.301494491913695, -41.85312161724741];
+
+    // Criação do mapa dentro da div com id="map"
+    const map = L.map('map').setView(sacCoords, 16); // zoom 16 é um bom nível para cidade
+
+    // Adiciona a camada de mapa (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Adiciona o marcador no local do SAC
+    L.marker(sacCoords).addTo(map)
+      .bindPopup('<b>SAC de Irecê</b><br>Atendimento ao cidadão.')
+      .openPopup();
+  </script>
+
+</body>
+</html>
+
+{% endblock %}

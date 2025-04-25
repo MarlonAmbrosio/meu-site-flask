@@ -1,10 +1,57 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>homepage</title>
-</head>
-<body>
-    <p>Esse é o meu primeiro site. Marlon acelera ai</p>
-</body>
-</html>
+{% extends "padrao.html" %}
+
+{% block conteudo %}
+    <section class="container mt-5 lead w-75 mx-auto">
+        <h2 class="fw-bold">Bem-Vindo ao Cidadania Fácil!</h2>
+        <p>Este projeto foi feito visando a população de Irecê, buscando resolver as dúvidas mais comuns que cercam a população sobre o SAC.
+            Nosso objetivo é promover uma melhor comunicação entre a organização e a população local, facilitando o acesso à informação e aos serviços essenciais.
+            Cidadania Fácil busca desenvolver uma instituição mais eficaz, responsável e transparente em todos os níveis, além de garantir que todos os cidadãos tenham acesso à identidade legal e aos serviços públicos de forma simples e acessível.
+        </p>
+        <p>Aqui, você encontrará tudo o que precisa saber sobre o SAC, os documentos essenciais para a cidadania e como garantir que seus direitos sejam respeitados de forma rápida e eficiente.</p>
+
+        <h2 class="fw-bold mt-5">O que é o SAC?</h2>
+        <p>O SAC é um serviço público que visa facilitar o acesso da população a diversos serviços essenciais, como emissão de documentos, atendimento ao cidadão e outros serviços administrativos.</p>
+        <p>Ele está presente em várias localidades da Bahia, com unidades físicas e canais online para agendamentos e informações.</p>
+
+        <h4 class="fw-bold mt-5">Principais Serviços:</h4>
+        <p>Emissão de RG, CPF, Título de Eleitor</p>
+        <p>Solicitação de Certidões</p>
+        <p>Atendimento ao Trabalhador</p>
+        <p>E muito mais!</p>
+
+        <h4 class="fw-bold mt-5">Onde Encontrar o SAC em Irecê?</h4>
+        <p>O SAC de Irecê está localizado na Praça Clériston Andrade, 100 - Centro, Irecê - BA, 44900-000.</p>
+        <p>Venha até a unidade para agendar seus serviços ou esclarecer suas dúvidas com nossos atendentes.</p>
+        <p>Use o mapa <a href="{{ url_for('mapa') }}">CLICANDO AQUI!</a> para encontrar o melhor caminho!</p>
+
+        <h2 class="fw-bold mt-5">Dúvidas Frequentes</h2>
+        <h4 class="fw-bold mt-5">Como agendar meu atendimento no SAC?</h4>
+        <p>O agendamento para o SAC de Irecê só é necessário para quem vai renovar a identidade. Os demais serviços, como renovação de CNH ou religação da conta de água, não necessitam de agendamento prévio. Para renovar o RG, você pode agendar seu atendimento de forma simples pelo portal <a href="https://www.ba.gov.br/" target="_blank">BA.GOV.BR</a> ou ligando no seguinte contato 0800 071-5353.</p>
+        <h4 class="fw-bold">Preciso de foto 3x4 para fazer o RG?</h4>
+        <p>A foto 3x4 deixou de ser obrigatória para quem vai renovar ou fazer o RG. A foto 3x4 somente será necessária para crianças com até 3 anos de idade. Para os demais casos, o sistema captura a foto diretamente no momento do atendimento.</p>
+        <h4 class="fw-bold">Posso tirar meu documento em outra cidade?</h4>
+        <p>Sim, você pode solicitar documentos como RG, CPF e Título de Eleitor em qualquer unidade do SAC, independentemente da sua cidade de residência.</p>
+        <h4 class="fw-bold">Quais são os horários de funcionamento?</h4>
+        <p>O SAC funciona de segunda a sexta-feira, das 8h às 13h.</p>
+        <h4 class="fw-bold">Preciso levar xerox dos documentos para o SAC?</h4>
+        <p>Para ser atendido no SAC, você deve levar sempre os documentos originais. A xerox só será necessária se o documento original estiver plastificado ou deteriorado, dificultando a leitura ou validação. Nesses casos, será solicitada uma cópia simples do documento.</p>
+        <h4 class="fw-bold">Para renovar a CNH posso usar a versão digital do documento (e-CNH)?</h4>
+        <p>Sim, a versão digital da CNH (e-CNH) é um documento válido para atendimento no SAC. No entanto, é importante que a versão digital seja apresentada junto com o QR Code, que já vem incluso no aplicativo oficial da CNH Digital. Essa verificação é essencial para garantir a autenticidade do documento.</p>
+        <h4 class="fw-bold">É possível emitir antecedentes criminais no SAC?</h4>
+        <p>Sim! No SAC é possível realizar a emissão dos antecedentes criminais estaduais da Bahia. Para isso, basta comparecer ao órgão com seu RG ou CNH em mãos. A consulta é simples e feita diretamente no atendimento.</p>
+
+        <h2 class="fw-bold mt-5">Embasa</h2>
+        <p>A Embasa possui um posto de atendimento dentro do SAC de Irecê. No local, você pode realizar diversos serviços relacionados à sua conta de água, como:</p>
+        <p>Religação de água</p>
+        <p>Atualização de cadastro</p>
+        <p>Solicitação de vistorias ou manutenção</p>
+        <p>Apesar do atendimento da Embasa estar disponível no SAC, não é possível emitir a segunda via da conta de água no local. Para isso, o cidadão deve utilizar os canais digitais da Embasa ou se dirigir a um ponto de atendimento específico da empresa.</p>
+
+        <h2 class="fw-bold mt-5">Contatos</h2>
+        <p>Tem dúvidas? Quer mais informações? Entre em contato diretamente com o SAC!</p>
+        <p>Telefone: (71) 4020-5353 (para celulares)</p>
+        <p class="pb-5">Telefone: 0800 071 5353 (para fixo)</p>
+
+
+    </section>
+{% endblock %}

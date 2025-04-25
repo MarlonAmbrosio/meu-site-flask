@@ -1,18 +1,22 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 
 app = Flask(__name__)
 
 @app.route('/')
 def homePage():
-    return render_template('homepage.html')
+    return render_template('homepage.html', titulo='Home')
 
-@app.route('/contatos')
-def contatos():
-    return render_template('contatos.html')
+@app.route('/cidadania')
+def cidadania():
+    return render_template('cidadania.html', titulo="Cidadania")
 
-@app.route('/usuarios/<nome_usuario>')
-def usuarios(nome_usuario):
-    return render_template("usuarios.html", nome_usuario=nome_usuario)
+@app.route('/novorg')
+def novorg():
+    return render_template("novorg.html", titulo="Novo Rg")
+
+@app.route('/mapa')
+def mapa():
+    return render_template("mapa.html", titulo="Mapa")
 
 
 if __name__ == "__main__":
